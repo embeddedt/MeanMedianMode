@@ -1,0 +1,269 @@
+
+* {
+    font-family: Helvetica, Arial, sans-serif;
+}
+.buildings {
+    display: inline-flex;
+    align-items: stretch;
+    max-width: 100%;
+    height: auto;
+    max-height: none;
+    margin-bottom: 1.5rem;
+}
+
+.buildings-container {
+    width: 100%;
+    flex: none;
+    text-align: center;
+}
+
+.mode-table.MuiTableContainer-root {
+    width: auto;
+    display: inline-block;
+}
+.mode-table .MuiTableHead-root {
+    background-color: rgb(200, 0, 0);
+}
+.mode-table .MuiTableHead-root .MuiTableCell-root {
+    font-size: 7vmin;
+    text-align: center;
+    line-height: 1.25em;
+    color: white;
+    text-shadow: 1px 1px 3px rgb(0, 0, 0);
+}
+
+@media (min-width: 500px) {
+    .mode-table .MuiTableHead-root .MuiTableCell-root {
+        font-size: 2rem;
+    }
+}
+.mode-table .MuiTableBody-root .MuiTableCell-root {
+    padding: 0 1rem;
+    text-align: center;
+    position: relative;
+}
+
+.mode-table-clickable {
+    cursor: pointer;
+}
+
+.mode-building-icon {
+    height: 100%;
+    background-color: black;
+    width: 1vmin;
+    display: inline-block;
+}
+.mode-building-icon-holder {
+    height: 1.1em;
+    line-height: 1.1;
+    text-align: center;
+    white-space: nowrap;
+    font-size: 150%;
+}
+
+.mode-dropbox {
+    height: 4vmin;
+    width: 10vmin;
+    min-width: 10vmin;
+    border: 2px gray solid;
+    border-radius: 0.3rem;
+    display: inline-block;
+}
+.mode-dropbox > * {
+    visibility: hidden;
+    display: none;
+    overflow: hidden;
+}
+.mode-dropbox > [data-rbd-placeholder-context-id] {
+    display: none !important;
+}
+.instructions {
+    text-align: center;
+    font-size: 5vmin;
+    border: 4px lightblue solid;
+    border-top: none;
+    border-bottom-left-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+    padding: 0.5rem;
+    background: lightblue;
+}
+
+.building-clickable {
+    cursor: pointer;
+}
+.MuiButton-root.check-button {
+    font-size: 4rem;
+    color: green;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+.MuiButton-root.hint-button {
+    font-size: inherit;
+    color: #0066ff;
+    min-width: auto;
+}
+.controls {
+    width: 100%;
+    display: flex;
+    flex: none;
+    justify-content: center;
+    margin-bottom: 2rem;
+}
+.game-spacer {
+    flex-grow: 1;
+    width: 100%;
+}
+
+.building-wrapper {
+    display:inline-flex;
+    align-items:flex-end;
+    position: relative;
+}
+.building {
+    display: inline-flex;
+    flex-direction: column-reverse;
+    background-color: black;
+    border-bottom: none;
+    border-bottom-color: brown;
+    margin: 0 0.5em;
+    position: relative;
+    margin-bottom: 2em;
+    width: 8vmin;
+}
+
+.building-stick-top {
+    align-self: flex-start;
+}
+.building-dragging {
+    box-shadow: 0px 0px 4px 0px #ccc;
+}
+.building-dragging .height-label {
+    text-shadow: 0px 0px 4px #ccc;
+}
+.height-label {
+    position: absolute;
+    bottom: -1.2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 3vmin;
+    line-height: 1;
+    white-space: nowrap;
+    max-width: none;
+    color: black;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+}
+@media (min-width: 500px) {
+    .height-label {
+        font-size: 1rem;
+    }
+}
+
+.sign-dimensions {
+    width: 1.5rem;
+    height: 8rem;
+}
+.building-sign-target {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.noselect {
+    -webkit-touch-callout: none; /* iOS Safari */
+      -webkit-user-select: none; /* Safari */
+       -khtml-user-select: none; /* Konqueror HTML */
+         -moz-user-select: none; /* Old versions of Firefox */
+          -ms-user-select: none; /* Internet Explorer/Edge */
+              user-select: none; /* Non-prefixed version, currently
+                                    supported by Chrome, Opera and Firefox */
+}
+.building .building-chunk {
+    background-color: inherit;
+    width: 100%;
+    padding-top: 25%;
+    background-size: 25% 100%;
+    background-image: url(images/building.svg);
+    background-repeat: repeat-x;
+    position: relative;
+    border-bottom: none;
+    border-bottom-color: inherit;
+}
+/*
+.building div:last-child::after {
+    content: '';
+    display: block;
+    background-color: transparent;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -100%);
+    width: 0;
+    height: 0;
+    border-left: 7.5em solid transparent;
+    border-right: 7.5em solid transparent;
+    border-bottom: 3.75em solid;
+    border-bottom-color: inherit;
+}
+*/
+
+
+#game-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    overflow: hidden;
+    background: url(images/background.svg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50% 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+html, body, #game-container {
+    width: 100%;
+    height: 100%;
+    min-width: 100%;
+    min-height: 100%;
+    max-width: 100%;
+    max-height: 100%;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    z-index: 1;
+    box-sizing: border-box;
+}
+
+#game-container {
+    display: flex;
+}
+
+.body,
+.wrapper {
+  /* Break the flow */
+  position: absolute;
+  top: 0px;
+
+  /* Give them all the available space */
+  width: 100%;
+  height: 100%;
+
+  /* Remove the margins if any */
+  margin: 0;
+
+  /* Allow them to scroll down the document */
+  overflow: hidden;
+}
+
+.body {
+  /* Sending body at the bottom of the stack */
+  z-index: 1;
+}
+
+.wrapper {
+  /* Making the wrapper stack above the body */
+  z-index: 2;
+}
