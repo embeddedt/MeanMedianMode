@@ -111,7 +111,7 @@ export default class SetRunner extends React.PureComponent<{ onSetEnd?: () => vo
             buildingList: buildingList,
             originalBuildingList: buildingList,
             ...heightLists,
-            currentMode: SetRunnerMode.Mean,
+            currentMode: SetRunnerMode.Median_Order,
             lastError: "",
             errorDialogOpen: false,
             isHint: false
