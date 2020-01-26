@@ -24,6 +24,10 @@
 .mode-table .MuiTableHead-root {
     background-color: rgb(200, 0, 0);
 }
+
+.mean-input {
+    width: 4em;
+}
 .mode-table .MuiTableHead-root .MuiTableCell-root {
     font-size: 7vmin;
     text-align: center;

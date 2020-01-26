@@ -111,7 +111,7 @@ export default class SetRunner extends React.PureComponent<{ onSetEnd?: () => vo
             buildingList: buildingList,
             originalBuildingList: buildingList,
             ...heightLists,
-            currentMode: SetRunnerMode.Median_Order,
+            currentMode: SetRunnerMode.Mean,
             lastError: "",
             errorDialogOpen: false,
             isHint: false
@@ -122,15 +122,15 @@ export default class SetRunner extends React.PureComponent<{ onSetEnd?: () => vo
     }
     getInstructionsForMode(): string {
         if(this.state.currentMode == SetRunnerMode.Median_Order)
-            return "Drag and sort the buildings by height from shortest to tallest.";
+            return "Sort the data set from shortest to tallest.";
         else if(this.state.currentMode == SetRunnerMode.Median_Sign)
-            return "Click on the median building (the one in the middle).";
+            return "Find the median. Click on the building.";
         else if(this.state.currentMode == SetRunnerMode.ThatsRight)
             return `That's right!${this.nextModeIn == SetRunnerMode.End ? " You're done!" : ""}`;
         else if(this.state.currentMode == SetRunnerMode.Mode_Categorize)
             return "Drag the buildings to the appopriate categories.";
         else if(this.state.currentMode == SetRunnerMode.Mode_ChooseOne)
-            return "Click on the category with the most buildings. This is the mode.";
+            return "Find the mode and click on the box under it.";
         else if(this.state.currentMode == SetRunnerMode.Mean)
             return `Figure out the mean of the buildings' heights and enter it in the textbox.`;
         else
@@ -310,7 +310,7 @@ export default class SetRunner extends React.PureComponent<{ onSetEnd?: () => vo
                 </Button>*/}
             </div>
             {SetRunnerMode[this.state.currentMode].startsWith("Mode") && <ModeTable onHeightChosen={this.state.currentMode == SetRunnerMode.Mode_ChooseOne ? this.onHeightChosen : null} getList={this.getList}/>}
-            {this.state.currentMode == SetRunnerMode.Mean && <input type="number" ref={this.meanInputRef} onKeyUp={this.onKeyUp} onChange={this.onKeyUp as any}/>}
+            {this.state.currentMode == SetRunnerMode.Mean && <span><input className="mean-input" type="number" ref={this.meanInputRef} onKeyUp={this.onKeyUp} onChange={this.onKeyUp as any}/>&nbsp;m</span>}
             <div className="game-spacer"></div>
             <div className="buildings-container">
                 <BuildingList getList={this.getList}
